@@ -5,6 +5,14 @@ services:
     build: .
     container_name: cafeflix
     ports:
-      - "4200:4200"
+      - "6006:6006"
+    volumes:
+      - .:/home/node/app
+
+  stoty:
+    build: .
+    container_name: cafeflixST
+    ports:
+      - "5000:5000"
     volumes:
       - .:/home/node/app
