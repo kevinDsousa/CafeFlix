@@ -1,1 +1,41 @@
-<p>body works!</p>
+<main class="flex flex-col gap-36 mx-5">
+  <div>
+    Banner filme atual
+  </div>
+  <section>
+    <p class="text-gray-400 mb-5 text-lg">Lançamentos</p>
+    <div class="flex gap-5">
+      <div class=" flex flex-col w-40 h-40 cursor-pointer hover:scale-110 duration-150" *ngFor="let filmes of filmes">
+        <img class="rounded-lg" [src]="baseUrl + filmes.poster_path" alt="{{filmes.title}}">
+        <h2>{{filmes.title}}</h2>
+      </div>
+    </div>
+  </section>
+  <section>
+    <p class="text-gray-400 mb-5 text-lg">Terror</p>
+    <div class="flex gap-5">
+      <div class=" flex flex-col w-40 h-40 cursor-pointer hover:scale-110 duration-150" *ngFor="let filmes of filmes">
+        <img class="rounded-lg" [src]="baseUrl + filmes.poster_path" alt="{{filmes.title}}">
+        <h2>{{filmes.title}}</h2>
+      </div>
+    </div>
+  </section>
+  <section>
+    <p class="text-gray-400 mb-5 text-lg">Drama</p>
+    <div class="flex gap-5">
+      <div class=" flex flex-col w-40 h-40 cursor-pointer hover:scale-110 duration-150" *ngFor="let filmes of filmes">
+        <img class="rounded-lg" [src]="baseUrl + filmes.poster_path" alt="{{filmes.title}}">
+        <h2>{{filmes.title}}</h2>
+      </div>
+    </div>
+  </section>
+  <section>
+    <p class="text-gray-400 mb-5 text-lg">Anime</p>
+    <div class="flex gap-5">
+      <div class=" flex flex-col w-40 h-40 cursor-pointer hover:scale-110 duration-150" *ngFor="let filmes of filmes">
+        <img class="rounded-lg" [src]="baseUrl + filmes.poster_path" alt="{{filmes.title}}">
+        <h2>{{filmes.title}}</h2>
+      </div>
+    </div>
+  </section>
+</main>
