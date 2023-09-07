@@ -1,18 +1,8 @@
-version: '3'
+version: '3.4'
 
 services:
   app:
+    image: cafeflix
     build: .
-    container_name: cafeflix
     ports:
-      - "6006:6006"
-    volumes:
-      - .:/home/node/app
-
-  stoty:
-    build: .
-    container_name: cafeflixST
-    ports:
-      - "5000:5000"
-    volumes:
-      - .:/home/node/app
+      - 8080:80

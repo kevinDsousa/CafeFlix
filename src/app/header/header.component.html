@@ -1,0 +1,25 @@
+<header class="bg-slate-900">
+  <div class="flex flex-1 items-center justify-around h-28">
+    <img class="w-[9rem]" src="{{logo}}" alt="logo">
+    <nav>
+      <ul class="text-white text-base flex gap-3">
+        <li *ngFor="let item of menu" class="hover:text-orange-600 duration-200"><a href="#">{{ item }}</a></li>
+      </ul>
+    </nav>
+    <input class="rounded pl-4 h-10 outline-none focus:outline-orange-500 duration-200" type="search" name="search" id="search" placeholder="Procure seu entretenimento">
+    <div class="flex gap-6">
+      <a
+        href="#"
+        class="hover:text-green-600 duration-200 delay-200 flex flex-col  items-center cursor-pointer">
+        <ng-icon class="text-2xl" name="heroUsers"></ng-icon>
+        {{links[0]}}
+      </a>
+      <a
+        href="#"
+        class="hover:text-orange-600 duration-200 delay-200 flex flex-col  items-center cursor-pointer">
+        <ng-icon class="text-2xl" name="heroIdentification"></ng-icon>
+        {{links[1]}}
+      </a>
+    </div>
+  </div>
+</header>
