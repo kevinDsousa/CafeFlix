@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { heroUsers } from '@ng-icons/heroicons/outline';
+import { bootstrapInstagram, bootstrapFacebook } from  '@ng-icons/bootstrap-icons';
 import { heroIdentification } from '@ng-icons/heroicons/outline';
 import { NgIconsModule } from '@ng-icons/core';
 
@@ -18,7 +19,7 @@ import { HeaderComponent } from './header/header.component';
   ],
   imports: [
     BrowserModule,
-    NgIconsModule.withIcons({ heroIdentification, heroUsers }),
+    NgIconsModule.withIcons({ heroIdentification, heroUsers, bootstrapInstagram, bootstrapFacebook }),
   ],
   providers: [],
   bootstrap: [AppComponent]
