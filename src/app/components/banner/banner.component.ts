@@ -7,6 +7,4 @@ import { urlBaseImg } from 'src/app/utils/consts/baseUrl';
 })
 export class BannerComponent {
   public urlBaseImage: string = urlBaseImg;
-
-
 }
