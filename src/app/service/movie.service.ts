@@ -1,8 +1,9 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpHeaders } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
+import { Movie } from "../shared/movie.model";
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class MovieService {
 
    movieTest = {
@@ -26,16 +27,16 @@ export class MovieService {
     "vote_count": 1595
   }
 
-  readonly urlApi: string = 'https://api.themoviedb.org/3'
+  private readonly urlApi: string = 'https://api.themoviedb.org/3'
 
   constructor(private http: HttpClient) { }
 
-  public getPopularBanner(): Observable<any> {
-    return this.http.get(`${this.urlApi}/trending/all/week?api_key=chave`)
-  }
+  // public getPopularBanner(): Observable<any> {
+  //   return this.http.get(`${this.urlApi}/trending/all/week?api_key=chave`)
+  // }
 
-  public getPopularMovie(): Observable<any> {
-    return this.http.get(`${this.urlApi}/movie/popular?api_key=chave&page=1`)
+  public getPopularMovie(): Observable<Movie[]> {
+    return this.http.get<Movie[]>(`${this.urlApi}/movie/popular?api_key=chaveapi&page=1`)
   }
 
   public getPopularId() { }
