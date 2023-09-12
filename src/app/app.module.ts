@@ -18,6 +18,9 @@ import { BannerComponent } from './components/banner/banner.component';
 import { PopularComponent } from './components/popular/popular.component';
 import { ListMoviesComponent } from './components/list-movies/list-movies.component';
 import { CardMovieComponent } from './components/card-movie/card-movie.component';
+import { LoginComponent } from './pages/login/login.component';
+import { RegisterComponent } from './pages/register/register.component';
+import { RecoverPasswordComponent } from './pages/recover-password/recover-password.component';
 
 
 @NgModule({
@@ -31,6 +34,9 @@ import { CardMovieComponent } from './components/card-movie/card-movie.component
     PopularComponent,
     ListMoviesComponent,
     CardMovieComponent,
+    LoginComponent,
+    RegisterComponent,
+    RecoverPasswordComponent,
   ],
   imports: [
     BrowserModule,
