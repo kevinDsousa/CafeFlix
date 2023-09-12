@@ -1,20 +1,23 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { HomeComponent } from './home/home.component';
-import { BannerComponent } from './home/banner/banner.component';
-import { PostMovieComponent } from './post-movie/post-movie.component';
-import { MenuComponent } from './header/menu/menu.component';
+import { HomeComponent } from './pages/home/home.component';
+import { PostMovieComponent } from './components/post-movie/post-movie.component';
+import { MenuComponent } from './components/menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './routes/app.routes';
-import { HeaderComponent } from './header/header.component';
+import { HeaderComponent } from './layout/header/header.component';
 
 import { bootstrapInstagram, bootstrapFacebook } from  '@ng-icons/bootstrap-icons';
 import { heroIdentification, heroUsers } from '@ng-icons/heroicons/outline';
 import { NgIconsModule } from '@ng-icons/core';
-import { FooterComponent } from './footer/footer.component';
+import { FooterComponent } from './layout/footer/footer.component';
+import { BodyComponent } from './layout/body/body.component';
+import { BannerComponent } from './components/banner/banner.component';
+import { PopularComponent } from './components/popular/popular.component';
 
 @NgModule({
   declarations: [
@@ -24,13 +27,16 @@ import { FooterComponent } from './footer/footer.component';
     PostMovieComponent,
     MenuComponent,
     HeaderComponent,
-    FooterComponent
+    FooterComponent,
+    PopularComponent,
+    BodyComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgIconsModule.withIcons({ heroIdentification, heroUsers, bootstrapInstagram, bootstrapFacebook }),
-    RouterModule.forRoot(ROUTES)
+    RouterModule.forRoot(ROUTES),
+    HttpClientModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
