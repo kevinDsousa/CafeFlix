@@ -5,7 +5,6 @@ import { HttpClientModule } from '@angular/common/http'
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './pages/home/home.component';
-import { PostMovieComponent } from './components/post-movie/post-movie.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './routes/app.routes';
@@ -15,21 +14,23 @@ import { bootstrapInstagram, bootstrapFacebook } from  '@ng-icons/bootstrap-icon
 import { heroIdentification, heroUsers } from '@ng-icons/heroicons/outline';
 import { NgIconsModule } from '@ng-icons/core';
 import { FooterComponent } from './layout/footer/footer.component';
-import { BodyComponent } from './layout/body/body.component';
 import { BannerComponent } from './components/banner/banner.component';
 import { PopularComponent } from './components/popular/popular.component';
+import { ListMoviesComponent } from './components/list-movies/list-movies.component';
+import { CardMovieComponent } from './components/card-movie/card-movie.component';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     BannerComponent,
-    PostMovieComponent,
     MenuComponent,
     HeaderComponent,
     FooterComponent,
     PopularComponent,
-    BodyComponent
+    ListMoviesComponent,
+    CardMovieComponent,
   ],
   imports: [
     BrowserModule,
