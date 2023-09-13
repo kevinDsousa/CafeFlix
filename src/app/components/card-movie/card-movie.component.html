@@ -1,4 +1,12 @@
 <div>
-  <img class="w-40 h-auto" src="https://image.tmdb.org/t/p/original/4m1Au3YkjqsxF8iwQy0fPYSxE0h.jpg" alt="">
-  <p>rate</p>
+  <img
+    (mouseover)="showValues($event)"
+    (mouseout)="hideValues($event)"
+    class="w-40 h-auto rounded hover:scale-105 duration-200"
+    [src]="URLIMAGE + movie.poster_path"
+    alt=""
+  >
+  <ng-container *ngIf="showDataCard">
+    <p>oi</p>
+  </ng-container>
 </div>
