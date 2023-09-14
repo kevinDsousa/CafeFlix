@@ -44,5 +44,4 @@ export class TopRatedComponent {
     const movieList = document.querySelector('.movie-rated-list') as HTMLElement;
     movieList.style.transform = `translateX(${translateX}px)`;
   }
-
 }

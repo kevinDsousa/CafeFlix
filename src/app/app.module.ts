@@ -24,7 +24,6 @@ import { ListMoviesComponent } from './layout/list-movies/list-movies.component'
 import { UpcomingPremieres } from './components/upcomingPremieres/upcoming-premieres.component';
 import { TopRatedComponent } from './components/top-rated/top-rated.component';
 
-
 @NgModule({
   declarations: [
     AppComponent,
@@ -35,7 +34,6 @@ import { TopRatedComponent } from './components/top-rated/top-rated.component';
     PopularComponent,
     FooterComponent,
     CardMovieComponent,
-
     LoginComponent,
     RegisterComponent,
     RecoverPasswordComponent,
