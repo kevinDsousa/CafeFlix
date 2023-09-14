@@ -1,4 +1,4 @@
-import { Component, ElementRef, Input, OnInit, Renderer2, ViewChild} from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/service/movie.service';
 import { Movie } from 'src/app/shared/movie.model';
 
@@ -11,10 +11,8 @@ export class PopularComponent implements OnInit{
   moviesList: Movie[] = [];
   currentPosition = 0;
 
-  @ViewChild('movieListContainer') movieListContainer!: ElementRef;
 
-
-  constructor(private moviesService: MovieService, private renderer: Renderer2) {
+  constructor(private moviesService: MovieService) {
     this.getMovies();
   }
 

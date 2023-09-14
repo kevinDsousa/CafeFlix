@@ -20,6 +20,9 @@ import { CardMovieComponent } from './components/card-movie/card-movie.component
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
 import { RecoverPasswordComponent } from './pages/recover-password/recover-password.component';
+import { ListMoviesComponent } from './layout/list-movies/list-movies.component';
+import { UpcomingPremieres } from './components/upcomingPremieres/upcoming-premieres.component';
+import { TopRatedComponent } from './components/top-rated/top-rated.component';
 
 
 @NgModule({
@@ -36,6 +39,9 @@ import { RecoverPasswordComponent } from './pages/recover-password/recover-passw
     LoginComponent,
     RegisterComponent,
     RecoverPasswordComponent,
+    ListMoviesComponent,
+    UpcomingPremieres,
+    TopRatedComponent,
   ],
   imports: [
     BrowserModule,
