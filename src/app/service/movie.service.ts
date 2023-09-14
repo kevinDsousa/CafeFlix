@@ -21,6 +21,14 @@ export class MovieService {
   }
 
   /**
+   * Função que pega os filmes mais populares
+   * @returns Retorna um observable e passa as informações para frente
+   */
+  public getTopRated(): Observable<any> {
+    return this.http.get<Movie[]>(`${this.URLAPI}/movie/top_rated?api_key=${this.APIKEY}`);
+   }
+
+  /**
    * Função que solicita todos os filmes populares
    * @returns Retorna um observable e passa as informações para frente
    */
@@ -50,15 +58,7 @@ export class MovieService {
    * @param data Dados para serem enviados no corpo da request
    * @returns Retorna um observable e passa as informações para frente
    */
-  getTrailer(data:any):Observable<any>{
+  getTrailer(data:any): Observable<any>{
     return this.http.get(`${this.URLAPI}/movie/${data}/videos?api_key=${this.APIKEY}`);
   }
-
-  /**
-   * Função que pega os filmes mais populares
-   * @returns Retorna um observable e passa as informações para frente
-   */
-  public getPopularTop() {
-    return this.http.get(`${this.URLAPI}/movie/top_rated?api_key=${this.APIKEY}`)
-   }
 }
