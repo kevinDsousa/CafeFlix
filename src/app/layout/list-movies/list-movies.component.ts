@@ -5,5 +5,5 @@ import { Component } from '@angular/core';
   templateUrl: './list-movies.component.html',
 })
 export class ListMoviesComponent {
-  public filmes = []
+
 }

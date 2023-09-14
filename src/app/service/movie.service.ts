@@ -1,44 +1,64 @@
-import { HttpClient } from "@angular/common/http";
+import { HttpClient, HttpParams } from "@angular/common/http";
 import { Injectable } from '@angular/core';
 import { Observable } from "rxjs";
+import { Movie } from "../shared/movie.model";
+import { environment } from "src/environments/environment.development";
 
-@Injectable()
+@Injectable({providedIn: 'root'})
 export class MovieService {
 
-   movieTest = {
-    "adult": false,
-    "backdrop_path": "/8pjWz2lt29KyVGoq1mXYu6Br7dE.jpg",
-    "genre_ids": [
-      28,
-      878,
-      27
-    ],
-    "id": 615656,
-    "original_language": "en",
-    "original_title": "Meg 2: The Trench",
-    "overview": "An exploratory dive into the deepest depths of the ocean of a daring research team spirals into chaos when a malevolent mining operation threatens their mission and forces them into a high-stakes battle for survival.",
-    "popularity": 5133.953,
-    "poster_path": "/4m1Au3YkjqsxF8iwQy0fPYSxE0h.jpg",
-    "release_date": "2023-08-02",
-    "title": "Meg 2: The Trench",
-    "video": false,
-    "vote_average": 7,
-    "vote_count": 1595
-  }
-
-  readonly urlApi: string = 'https://api.themoviedb.org/3'
+  private readonly URLAPI: string = environment.URLAPI
+  private readonly APIKEY: string = environment.APIKEY
 
   constructor(private http: HttpClient) { }
 
+  /**
+   * Função que solicita o banner para api
+   * @returns Retorna um observable e passa as informações para frente
+   */
   public getPopularBanner(): Observable<any> {
-    return this.http.get(`${this.urlApi}/trending/all/week?api_key=chave`)
+    return this.http.get(`${this.URLAPI}/trending/all/week?api_key=${this.APIKEY}`);
   }
 
+  /**
+   * Função que solicita todos os filmes populares
+   * @returns Retorna um observable e passa as informações para frente
+   */
   public getPopularMovie(): Observable<any> {
-    return this.http.get(`${this.urlApi}/movie/popular?api_key=chave&page=1`)
+    const params = new HttpParams().set('api_key', this.APIKEY);
+    return this.http.get<Movie[]>(`${this.URLAPI}/movie/popular`, { params });
   }
 
-  public getPopularId() { }
+  /**
+   * Função que solicita os filmes que estão em estreia
+   * @returns Retorna um observable e passa as informações para frente
+   */
+  public upcomingPremieres():Observable<any> {
+    return this.http.get(`${this.URLAPI}/movie/upcoming?api_key=${this.APIKEY}&page=1`);
+  }
 
-  public getPopularTop() { }
+  /**
+   * Função que solicita os filmes em alta
+   * @returns Retorna um observable e passa as informações para frente
+   */
+  nowPlaying():Observable<any> {
+    return this.http.get(`${this.URLAPI}/movie/now_playing?api_key=${this.APIKEY}`);
+  }
+
+  /**
+   * Função que solicita o trailer do filme com base no data
+   * @param data Dados para serem enviados no corpo da request
+   * @returns Retorna um observable e passa as informações para frente
+   */
+  getTrailer(data:any):Observable<any>{
+    return this.http.get(`${this.URLAPI}/movie/${data}/videos?api_key=${this.APIKEY}`);
+  }
+
+  /**
+   * Função que pega os filmes mais populares
+   * @returns Retorna um observable e passa as informações para frente
+   */
+  public getPopularTop() {
+    return this.http.get(`${this.URLAPI}/movie/top_rated?api_key=${this.APIKEY}`)
+   }
 }
