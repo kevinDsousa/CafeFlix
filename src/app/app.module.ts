@@ -9,14 +9,13 @@ import { MenuComponent } from './components/menu/menu.component';
 import { RouterModule } from '@angular/router';
 import { ROUTES } from './routes/app.routes';
 import { HeaderComponent } from './layout/header/header.component';
+import { PopularComponent } from './components/popular/popular.component'
 
 import { bootstrapInstagram, bootstrapFacebook } from  '@ng-icons/bootstrap-icons';
 import { heroIdentification, heroUsers } from '@ng-icons/heroicons/outline';
 import { NgIconsModule } from '@ng-icons/core';
 import { FooterComponent } from './layout/footer/footer.component';
 import { BannerComponent } from './components/banner/banner.component';
-import { PopularComponent } from './components/popular/popular.component';
-import { ListMoviesComponent } from './components/list-movies/list-movies.component';
 import { CardMovieComponent } from './components/card-movie/card-movie.component';
 import { LoginComponent } from './pages/login/login.component';
 import { RegisterComponent } from './pages/register/register.component';
@@ -30,10 +29,10 @@ import { RecoverPasswordComponent } from './pages/recover-password/recover-passw
     BannerComponent,
     MenuComponent,
     HeaderComponent,
-    FooterComponent,
     PopularComponent,
-    ListMoviesComponent,
+    FooterComponent,
     CardMovieComponent,
+
     LoginComponent,
     RegisterComponent,
     RecoverPasswordComponent,

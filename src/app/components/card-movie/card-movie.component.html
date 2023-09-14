@@ -1,12 +1,12 @@
-<div>
+<div class="inline-block w-40 cursor-pointer">
   <img
     (mouseover)="showValues($event)"
     (mouseout)="hideValues($event)"
-    class="w-40 h-auto rounded hover:scale-105 duration-200"
+    class="w-full h-auto scale-90 hover:scale-100 duration-300 rounded"
     [src]="URLIMAGE + movie.poster_path"
     alt=""
   >
   <ng-container *ngIf="showDataCard">
-    <p>oi</p>
+
   </ng-container>
 </div>
