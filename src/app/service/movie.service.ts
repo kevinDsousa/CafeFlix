@@ -60,31 +60,6 @@ export class MovieService {
   getTrailer(data:any): Observable<any>{
     return this.http.get(`${this.URLAPI}/movie/${data}/videos?api_key=${this.APIKEY}`);
   }
-  
-  /**
-   * Função que solicita os filmes que estão em estreia
-   * @returns Retorna um observable e passa as informações para frente
-   */
-  public upcomingPremieres():Observable<any> {
-    return this.http.get(`${this.URLAPI}/movie/upcoming?api_key=${this.APIKEY}&page=1`);
-  }
-
-  /**
-   * Função que solicita os filmes em alta
-   * @returns Retorna um observable e passa as informações para frente
-   */
-  nowPlaying():Observable<any> {
-    return this.http.get(`${this.URLAPI}/movie/now_playing?api_key=${this.APIKEY}`);
-  }
-
-  /**
-   * Função que solicita o trailer do filme com base no data
-   * @param data Dados para serem enviados no corpo da request
-   * @returns Retorna um observable e passa as informações para frente
-   */
-  getTrailer(data:any):Observable<any>{
-    return this.http.get(`${this.URLAPI}/movie/${data}/videos?api_key=${this.APIKEY}`);
-  }
 
   /**
    * Função que pega os filmes mais populares
