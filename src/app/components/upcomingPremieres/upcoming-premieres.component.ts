@@ -17,27 +17,39 @@ export class UpcomingPremieres implements OnInit {
 
   ngOnInit(): void {}
 
-  getMovies(): void {
+  /**
+   * Pega os filmes mais bem avaliados
+   */
+  public getMovies(): void {
     this.moviesService.upcomingPremieres().subscribe((movies) => {
       this.moviesList = movies.results;
     });
   }
 
-  handleLeft(): void {
+  /**
+   * Funcionalidade do botão que move o carrosel para esquerda
+   */
+  public handleLeft(): void {
     if (this.currentPositionRated > 0) {
       this.currentPositionRated--;
       this.scrollMovieList();
     }
   }
 
-  handleRight(): void {
+  /**
+   * Funcionalidade do botão que move o carrosel para
+   */
+  public handleRight(): void {
     if (this.currentPositionRated < this.moviesList.length - 1) {
       this.currentPositionRated++;
       this.scrollMovieList();
     }
   }
 
-  scrollMovieList(): void {
+  /**
+   * Funcionalidade de scroll
+   */
+  public scrollMovieList(): void {
     const movieWidth = 90;
     const translateX = -this.currentPositionRated * movieWidth;
     const movieList = document.querySelector('.movie-top-list') as HTMLElement;

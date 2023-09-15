@@ -9,6 +9,7 @@ export class MovieService {
 
   private readonly URLAPI: string = environment.URLAPI
   private readonly APIKEY: string = environment.APIKEY
+  private readonly URLIMAGE: string = environment.URLIMAGE
 
   constructor(private http: HttpClient) { }
 
@@ -65,7 +66,11 @@ export class MovieService {
    * Função que pega os filmes mais populares
    * @returns Retorna um observable e passa as informações para frente
    */
-  public getPopularTop() {
+  public getPopularTop(): Observable<any> {
     return this.http.get(`${this.URLAPI}/movie/top_rated?api_key=${this.APIKEY}`)
+   }
+
+   public getDetailsMovies(id: string): Observable<any> {
+    return this.http.get(`${this.URLAPI}/movie/${id}?api_key=${this.APIKEY}`)
    }
 }
