@@ -23,6 +23,7 @@ import { RecoverPasswordComponent } from './pages/recover-password/recover-passw
 import { ListMoviesComponent } from './layout/list-movies/list-movies.component';
 import { UpcomingPremieres } from './components/upcomingPremieres/upcoming-premieres.component';
 import { TopRatedComponent } from './components/top-rated/top-rated.component';
+import { NowPlayingComponent } from './components/now-playing/now-playing.component';
 
 @NgModule({
   declarations: [
@@ -40,6 +41,7 @@ import { TopRatedComponent } from './components/top-rated/top-rated.component';
     ListMoviesComponent,
     UpcomingPremieres,
     TopRatedComponent,
+    NowPlayingComponent,
   ],
   imports: [
     BrowserModule,
