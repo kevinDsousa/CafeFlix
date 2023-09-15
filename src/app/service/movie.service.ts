@@ -48,7 +48,7 @@ export class MovieService {
    * Função que solicita os filmes em alta
    * @returns Retorna um observable e passa as informações para frente
    */
-  nowPlaying():Observable<any> {
+  public nowPlaying():Observable<any> {
     return this.http.get(`${this.URLAPI}/movie/now_playing?api_key=${this.APIKEY}`);
   }
 
@@ -57,7 +57,7 @@ export class MovieService {
    * @param data Dados para serem enviados no corpo da request
    * @returns Retorna um observable e passa as informações para frente
    */
-  getTrailer(data:any): Observable<any>{
+  public getTrailer(data:any): Observable<any>{
     return this.http.get(`${this.URLAPI}/movie/${data}/videos?api_key=${this.APIKEY}`);
   }
 

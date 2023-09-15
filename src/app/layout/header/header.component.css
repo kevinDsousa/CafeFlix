@@ -8,4 +8,10 @@ header.isFixed {
   z-index: 50;
   height: 6rem;
   transition-duration: 500ms;
+  --tw-bg-opacity: 1;
+    background-color: rgb(2 6 23 / var(--tw-bg-opacity));
+}
+
+header {
+  background-color: #00000090;
 }

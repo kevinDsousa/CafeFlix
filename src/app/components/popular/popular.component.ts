@@ -18,12 +18,18 @@ export class PopularComponent implements OnInit{
 
   ngOnInit(): void {}
 
+  /**
+   * Pega os filmes mais bem avaliados
+   */
   getMovies(): void {
     this.moviesService.getPopularMovie().subscribe((movies) => {
       this.moviesList = movies.results;
     });
   }
 
+  /**
+   * Funcionalidade do botão que move o carrosel para esquerda
+   */
   handleLeft(): void {
     if (this.currentPosition > 0) {
       this.currentPosition--;
@@ -31,6 +37,9 @@ export class PopularComponent implements OnInit{
     }
   }
 
+  /**
+   * Funcionalidade do botão que move o carrosel para
+   */
   handleRight(): void {
     if (this.currentPosition < this.moviesList.length - 1) {
       this.currentPosition++;
@@ -38,6 +47,9 @@ export class PopularComponent implements OnInit{
     }
   }
 
+  /**
+   * Funcionalidade de scroll
+   */
   scrollMovieList(): void {
     const movieWidth = 90;
     const translateX = -this.currentPosition * movieWidth;
