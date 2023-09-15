@@ -14,11 +14,19 @@ export class CardMovieComponent {
 
   public showDataCard: boolean = false;
 
+  /**
+   * Mostra valores com base no hover
+   * @param $event Evento de hover mostra template
+   */
   showValues($event: MouseEvent): void {
     this.showDataCard = true;
     console.log(this.showDataCard);
   }
 
+  /**
+   * Esconde valores com base no hover
+   * @param $event Evento de hover esconde template
+   */
   hideValues($event: MouseEvent): void {
     this.showDataCard = false
     console.log(this.showDataCard);

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { MovieService } from 'src/app/service/movie.service';
 import { Movie } from 'src/app/shared/movie.model';
 
@@ -7,7 +7,7 @@ import { Movie } from 'src/app/shared/movie.model';
   templateUrl: './now-playing.component.html',
   styleUrls: ['./now-playing.component.css']
 })
-export class NowPlayingComponent {
+export class NowPlayingComponent implements OnInit {
   moviesList: Movie[] = [];
   currentPositionRated = 0;
 
@@ -17,27 +17,39 @@ export class NowPlayingComponent {
 
   ngOnInit(): void {}
 
-  getMovies(): void {
+  /**
+   * Pega os filmes mais bem avaliados
+   */
+  public getMovies(): void {
     this.moviesService.nowPlaying().subscribe((movies) => {
       this.moviesList = movies.results;
     });
   }
 
-  handleLeft(): void {
+  /**
+   * Funcionalidade do botão que move o carrosel para esquerda
+   */
+  public handleLeft(): void {
     if (this.currentPositionRated > 0) {
       this.currentPositionRated--;
       this.scrollMovieList();
     }
   }
 
-  handleRight(): void {
+  /**
+   * Funcionalidade do botão que move o carrosel para
+   */
+  public handleRight(): void {
     if (this.currentPositionRated < this.moviesList.length - 1) {
       this.currentPositionRated++;
       this.scrollMovieList();
     }
   }
 
-  scrollMovieList(): void {
+  /**
+   * Funcionalidade de scroll
+   */
+  public scrollMovieList(): void {
     const movieWidth = 90;
     const translateX = -this.currentPositionRated * movieWidth;
     const movieList = document.querySelector('.movie-now-list') as HTMLElement;
