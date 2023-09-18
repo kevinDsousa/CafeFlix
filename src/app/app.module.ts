@@ -11,7 +11,7 @@ import { ROUTES } from './routes/app.routes';
 import { HeaderComponent } from './layout/header/header.component';
 import { PopularComponent } from './components/popular/popular.component'
 
-import { bootstrapInstagram, bootstrapFacebook } from  '@ng-icons/bootstrap-icons';
+import { bootstrapInstagram, bootstrapFacebook, bootstrapHeart } from  '@ng-icons/bootstrap-icons';
 import { heroIdentification, heroUsers } from '@ng-icons/heroicons/outline';
 import { NgIconsModule } from '@ng-icons/core';
 import { FooterComponent } from './layout/footer/footer.component';
@@ -24,6 +24,7 @@ import { ListMoviesComponent } from './layout/list-movies/list-movies.component'
 import { UpcomingPremieres } from './components/upcomingPremieres/upcoming-premieres.component';
 import { TopRatedComponent } from './components/top-rated/top-rated.component';
 import { NowPlayingComponent } from './components/now-playing/now-playing.component';
+import { CardDetailComponent } from './pages/card-detail/card-detail.component';
 
 @NgModule({
   declarations: [
@@ -42,11 +43,12 @@ import { NowPlayingComponent } from './components/now-playing/now-playing.compon
     UpcomingPremieres,
     TopRatedComponent,
     NowPlayingComponent,
+    CardDetailComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    NgIconsModule.withIcons({ heroIdentification, heroUsers, bootstrapInstagram, bootstrapFacebook }),
+    NgIconsModule.withIcons({ heroIdentification, heroUsers, bootstrapInstagram, bootstrapFacebook, bootstrapHeart }),
     RouterModule.forRoot(ROUTES),
     HttpClientModule,
   ],

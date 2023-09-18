@@ -5,6 +5,7 @@ export class Movie {
   public id!: number
   public original_language!: string
   public original_title!: string
+  public original_name!: string
   public overview!: string
   public popularity!: number
   public poster_path!: string
