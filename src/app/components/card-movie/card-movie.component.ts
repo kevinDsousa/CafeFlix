@@ -19,7 +19,6 @@ export class CardMovieComponent implements OnInit {
   public showDataCard: boolean = false;
 
   constructor() {}
-
   /**
    * Mostra valores com base no hover
    * @param $event Evento de hover mostra template
