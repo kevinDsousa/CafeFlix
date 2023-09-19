@@ -2,7 +2,8 @@
 
 # Ignorar todos os arquivos na pasta environments
 environments
-
+.env
+.env.example
 # Compiled output
 /dist
 /tmp
