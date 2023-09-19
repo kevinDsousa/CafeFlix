@@ -9,7 +9,6 @@ export class MovieService {
 
   private readonly URLAPI: string = environment.URLAPI
   private readonly APIKEY: string = environment.APIKEY
-  private readonly URLIMAGE: string = environment.URLIMAGE
 
   constructor(private http: HttpClient) { }
 
@@ -70,7 +69,21 @@ export class MovieService {
     return this.http.get(`${this.URLAPI}/movie/top_rated?api_key=${this.APIKEY}`)
    }
 
+   /**
+    * Funcao que pega os filmes a partir do id
+    * @param id identificador
+    * @returns Retorna um observable e passa as informacoes para frente
+    */
    public getDetailsMovies(id: string): Observable<any> {
     return this.http.get(`${this.URLAPI}/movie/${id}?api_key=${this.APIKEY}`)
    }
+
+   /**
+    * Função que pega os casts dos filmes
+    * @param id identificador
+    * @returns retorna um observable e passa as informacoes para frente
+    */
+   getMovieCast(id: string): Observable<any> {
+    return this.http.get(`${this.URLAPI}/movie/${id}/credits?api_key=${this.APIKEY}`);
+  }
 }

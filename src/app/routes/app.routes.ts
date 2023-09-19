@@ -14,5 +14,5 @@ export const ROUTES: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'register', component: RegisterComponent},
   {path: 'recover-password', component: RecoverPasswordComponent},
-  {path: 'movie', component: CardDetailComponent},
+  {path: 'movie/:id', component: CardDetailComponent},
 ]

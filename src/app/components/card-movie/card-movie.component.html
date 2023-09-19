@@ -2,10 +2,10 @@
   <img
     (mouseover)="showValues($event)"
     (mouseout)="hideValues($event)"
-    routerLink="/movie"
+    [routerLink]="['/movie', movie.id]"
     class="w-full h-auto scale-90 hover:scale-100 duration-300 rounded"
     [src]="URLIMAGE + movie.poster_path"
-    alt=""
+    alt="..."
   >
   <ng-container *ngIf="showDataCard">
     <div id="average" class="absolute bottom-1 w-full flex items-center justify-evenly rounded h-10 duration-200">
